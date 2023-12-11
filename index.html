@@ -4,72 +4,56 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/style.css" />
-
-    <title>Mon portoflio</title>
+    <title>Portfolio bootstrap</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="/css/style.css">
 </head>
 
-
 <body>
-    <!-- header -->
-    <div class=" containerHead flex" >
-        <!-- partie gauche avec mon nom -->
-        <div>
-            <h2>Hendrikx</h2>
-            <h2>Fabrice</h2>
 
-        </div>
+    <header>
+        <nav class="navbar navbar-expand-lg bg-dark ">
+            <div class="container-fluid  ">
 
-        <!-- partrie de droite avec la nav -->
-        <nav class="w-100">
-
-            <ul class="flex  justify-content-around " id="phead">
-
-                <li><a href="#home">HOME</a></li>
-                <li><a href="#about">ABOUT</a></li>
-                <li><a href="#services">SERVICES</a></li>
-                <li><a href="#experience">EXPERIENCE</a></li>
-                <li><a href="#contact">CONTACT</a></li>
+                <a class="navbar-brand text-light " href="#">Fabrice Hendrikx</a>
 
 
-            </ul>
+                <div class="collapse navbar-collapse justify-content-end " id="navbarSupportedContent">
+                    <ul class="navbar-nav   mb-2 mb-lg-0 ">
+                        <li class="nav-item">
+                            <a class="nav-link active text-white" aria-current="page" href="#">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active text-white" aria-current="page" href="#">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active text-white" aria-current="page" href="#">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active text-white" aria-current="page" href="#">Home</a>
+                        </li>
+
+                    </ul>
+
+
+                </div>
+
+            </div>
 
         </nav>
 
 
-    </div>
+    </header>
 
-    <!-- partie principale -->
+    <main>
+        <img src="/img/sunrise.jpg" class="img-fluid h-100" alt="Responsive image">
 
-    <!-- premiere page -->
-    <div class="container-home" id="home">
-        <div  id="photo">
-            <div id="texteDeroulant">
-                <div>
-                    Developpeur Web Full Stack
-                </div>
-            </div>
-        </div>
-    </div>
+    </main>
 
 
-    <!-- partie secondaire  ABOUT-->
-    <div class="container-about " id="about">
-        <div id="photoAbout"></div>
-        <div id="textAbout">
-            <div>
-                <h1>Développeur Web Full Stack</h1>
-                <p >Grâce à mes compétences en Web Development doublées d’une formation d’ingénieur agronome qui m’apporte rigueur, esprit scientifique, polyvalence, capacités managériales,  je suis la personne qu’il vous faut pour mener à bien vos projet de développement Web.
-                    J’ai une expérience en HTML5, CSS3,  PHP, Java Script et Python
-                    </p>
-            </div>
-            <!-- liste coordonées -->
-            <div></div>
-        </div>
-    </div>
 
-   
-
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
 </body>
 
 </html>
