@@ -1,24 +1,142 @@
-/* * { box-sizing: border-box;
-padding-left: 0px;} */
+@import url('https://fonts.googleapis.com/css2?family=Lobster&family=Roboto+Condensed:wght@300;500&display=swap');
 
-main {
-    max-height: 100vh;
+:root {
+  --blanc : #fff;
 }
 
-a { color: black; text-decoration: none;}
-
-
-.pColonneDroite {background-color: rgba(133, 126, 118, 0.326); }
-
-.pTextJustifie { text-align: justify;}
-
-@media (max-width : 992px) {
-#option1, #option2 { font-size: 0.7rem;}
+body {
+  font-family: "Roboto Condensed" sans-serif;
 }
 
-#contact2 , #profil2{ display: none;}
+
+/* NAVBAR */
+header {
+  z-index: 100;
+  position: relative;
+}
+nav ul li {
+    text-transform: uppercase;
+  }
+
+
+  /*  MAIN */
+
+  .back_img {
+    /* display: none; */
+  position: absolute;
+  top: 0vh;
+    bottom: 0;
+    right: 0;
+    left: 0;
+  background: url(../img/bryan-goff-RF4p4rTM-2s-unsplash.jpg) no-repeat;
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+  
+  }
+
+  .home {
+    display: flex;
+    /* display: none; */
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    font-family: "Roboto Condensed" sans-serif;
+    color: var(--blanc);
+  
+  }
+
+  /* containers des animations */
+  .container1 {
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 200px;
+    height : 200px;
+    /* border: 2px solid blue; */
+    text-align: center;
+}
+
+.container2 {
+    display: flex;
+    position: relative;
+
+    justify-content: center;
+    top : 25%;
+    width: 50%;
+    height : 30%;
+    /* border: 2px solid rgb(185, 18, 35); */
+    transform: rotate(0deg)
+
+}
+  
+/* ABOUT */
+.about {
+display: inline-flex;
+/* display: none; */
+position: absolute;
+top: 0vh;
+bottom: 0;
+right: 0;
+left: 0;
+justify-content: center;
+text-align: center;
+align-items: center;
+font-family: "Roboto Condensed" sans-serif;
+color: var(--blanc);
+
+}
+
+.flexline { display : inline-flex}
+
+.info_container {
+  display: flex;
+  /* display: none; */
+  position: relative;
+  /* text-align: center; */
+  min-height: 20rem;
+  background-color: rgba(128, 128, 128, 0.535);
+  border: 1px gray solid;
+  border-radius: 0% 0% 10px 10px;;
+  align-items: center;
+  font-family: "Roboto Condensed" sans-serif;
+
+}
+
+.presentation {
+  display: flex;
+}
+
+.hard_skills {
+  display: none;
+}
+
+.formation {
+  display: none;
+}
+
+.experience {
+  display: none;
+}
+
+.langues {
+  display: none;
+}
+
+.soft_skills {
+  display: none;
+}
+
 @media (max-width : 768px) {
-    .pColonneGauche {display: none}
-   
-    #contact2, #profil2 {display : block}  ;
-}
+  .left_part {display: none}}
