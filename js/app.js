@@ -1,29 +1,42 @@
 $(document).ready(function () {
-// pour navigation NAVBAR
-//  on supprime le collapse lors du click
-$('#main-nav>li>a').on('click', function(){
-    $('.navbar-collapse').collapse('hide');
-});
+    
+    let id_categories = ["presentation", "hard_skills", "formation", "experience", "langues", "soft_skills"]
 
-let id_navbar = ["home", "about", "portfolio", "contact"];
-// on cache d'abord tout sauf "home"
-for (let i = 1; i < id_navbar.length; i++) {
-    $("."+ id_navbar[i]).css("display","none");}
+    
+    // pour navigation NAVBAR
+    //  on supprime le collapse lors du click
+    $('#main-nav>li>a').on('click', function () {
+        $('.navbar-collapse').collapse('hide');
+    });
+
+    let id_navbar = ["home", "about", "portfolio", "contact"];
+    // on cache d'abord tout sauf "home"
+    for (let i = 1; i < id_navbar.length; i++) {
+        $("." + id_navbar[i]).css("display", "none");
+    }
 
 
     //    création des clicks et des hides sur chaque catégorie
     for (let i = 0; i < id_navbar.length; i++) {
         $("#" + id_navbar[i]).click(function () {
-            // lors du click, on cache tout
+            // lors du click, on cache toutes les categories nav
             for (let j = 0; j < id_navbar.length; j++) {
-                $("." + id_navbar[j]).css("display","none");
+                $("." + id_navbar[j]).css("display", "none");
             };
 
-            // on montre la catégorie clickée
+            // lors du click, on cache toute les catégories about sauf presentation qu'on montre
+            for (let j = 1; j < id_categories.length; j++) {
+                $("." + id_categories[j]).hide();
+            };
+            $(".presentation").show();
+
+            // on montre la catégorie nav clickée
             $("." + id_navbar[i]).fadeToggle(
                 "slow",
-                "swing",)} 
-                )}
+                "swing",)
+        }
+        )
+    }
 
 
 
@@ -67,27 +80,28 @@ for (let i = 1; i < id_navbar.length; i++) {
         });
     }
 
-    function rotateImage(element, degree, animDuration) {
-        element.animate({ transform: degree }, {
-            duration: animDuration,
-            easing: "linear",
-            step: function (now) {
-                $(this).css({
-                    '-webkit-transform': 'rotate(' + now + 'deg)',
-                    '-moz-transform': 'rotate(' + now + 'deg)',
-                    'transform': 'rotate(' + now + 'deg)'
-                });
+    function rotateImage(element, duree) {
+        element.animate(
+            { deg: 360 },
+            {
+                duration: duree, // Durée de l'animation en millisecondes
+                step: function (now) {
+                    $(this).css({ transform: 'rotate(' + now + 'deg)' });
+                },
+                complete: function () {
+                    // Appel récursif pour continuer la rotation
+                    rotateImage(element, duree);
+                }
             }
-        });
-
-        rotateImage(element, degree, animDuration);
+        );
     }
+
+
     // moveit(element, rayon, xcenter, ycenter, speed)
     moveit($(".container1"), 150, 0, -200, 100);
-    // rotateImage($(".container2"), -360, 15000)
+    rotateImage($(".container2"), 15000)
 
     // Toogle dans la partie about
-    let id_categories = ["presentation", "hard_skills", "formation", "experience", "langues", "soft_skills"]
 
     //    création des clicks et des hides sur chaque catégorie
     for (let i = 0; i < id_categories.length; i++) {
@@ -97,26 +111,27 @@ for (let i = 1; i < id_navbar.length; i++) {
                 $("." + id_categories[j]).hide();
             };
 
-            // on montre la catégorie clickée
+            // puis on montre la catégorie clickée
             $("." + id_categories[i]).fadeToggle(
                 "slow",
-                "swing",
-                // function(){
-                //     // on cherche les progress bar dans la catégorie
-                //     let progress = $("#" + id_categories[i]).find(".progress-bar");
-                //     for (let k = 0; k < progress.length; k++) {
-                //         a = progress[k].style.width;
-                //         progress[k].style.width = "10%"
-                //         progress[k].animate(
-                //             {width: a},
-                //             1000,
-                //             function(){ console.log("progress[k].style.width = a") });
-                //         // console.log(a)
+                "swing");
 
-                //     }
 
-                // }
-            );
+            // puis on cherche les progress bar dans la catégorie
+            let progress = $("." + id_categories[i]).find(".progress-bar");
+            for (let k = 0; k < progress.length; k++) {
+                let a = progress[k].style.width;
+                // console.log(a);
+                progress[k].animate(
+                    { width: "10%" },
+                    1000,
+                    function () { console.log("essai") });
+                // console.log(a)
+            }
+
+
+
+
 
 
         }

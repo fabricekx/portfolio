@@ -98,7 +98,6 @@ color: var(--blanc);
 
 }
 
-.flexline { display : inline-flex}
 
 .info_container {
   display: flex;
@@ -114,8 +113,21 @@ color: var(--blanc);
 
 }
 
+#contact {
+  /* display : block; */
+  /* position: absolute; */
+  top: 15%;
+  align-items: center;
+  margin-bottom: 10%;
+}
+.contact-hide {
+  display: none;
+}
+.p-hauteur { 
+  height: 200px;
+}
 .presentation {
-  display: flex;
+  display: block;
 }
 
 .hard_skills {
@@ -139,4 +151,9 @@ color: var(--blanc);
 }
 
 @media (max-width : 768px) {
-  .left_part {display: none}}
+  .left_part {display: none}
+  .contact-hide {
+    display: block;
+    margin-top: 40px;
+    margin-bottom: 15px;
+  }}
